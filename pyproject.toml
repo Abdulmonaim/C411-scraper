@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "c411-scraper"
+version = "0.1.0"
+description = "A program that extracts contact details of leads for telemarketing"
+authors = ["Ahmad Abdulmonaim"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiohttp = "^3.9.1"
+beautifulsoup4 = "^4.10.0"  
+openpyxl = "^3.1.2"
+fake-useragent = "^0.1.11"  
+brotli = "^1.0.9"  
+requests = "^2.26.0"  
+async-timeout = "^4.0.3"
+types-requests = "^2.31.0.20240125"
+
+[tool.poetry.scripts]
+lint = "lint:main"
+format = "format:main"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.0.0"
+flake8-bugbear = "^24.1.17"
+black = "^24.1.0"
+mypy = "^1.8.0"
+
+[tool.black]
+line-length = 119
+
+[tool.mypy]
+ignore_missing_imports = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_return_any = true
+strict_optional = true
+show_error_codes = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[virtualenvs]
+in-project = true
